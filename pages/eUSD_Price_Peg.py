@@ -10,7 +10,7 @@ st.sidebar.markdown("# eUSD Price Peg")
 st.sidebar.markdown("---")
 
 # Path to your CSV file
-csv_path = 'aug22_data\\eusd_pricepeg.csv'
+csv_path = '../aug22_data/eusd_pricepeg.csv'
 
 # Load the CSV file into a DataFrame
 eusd_price_peg_aum_query_result = pd.read_csv(csv_path)

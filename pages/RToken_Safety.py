@@ -8,9 +8,9 @@ st.sidebar.markdown("# RToken Safety")
 st.sidebar.markdown("---")
 
 
-image_path_1 = 'aug22_data\\rs_collateral_check_8.22.png'
-image_path_2 = 'aug22_data\\rs_currentbasket_8.22.png'
-image_path_3 = 'aug22_data\\rs_stader_10percent.png'
+image_path_1 = '../aug22_data/rs_collateral_check_8.22.png'
+image_path_2 = '../aug22_data/rs_currentbasket_8.22.png'
+image_path_3 = '../aug22_data/rs_stader_10percent.png'
 
 
 

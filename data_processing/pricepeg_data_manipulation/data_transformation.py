@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Convert the string data into a pandas DataFrame
-csv_path = 'aug22_data\\eusd_pricepeg.csv'
+csv_path = '../aug22_data/eusd_pricepeg.csv'
 eusd_pricepeg_df = pd.read_csv(csv_path)
 
 # # Convert the 'hour' column to datetime

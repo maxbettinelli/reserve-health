@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 
 # Convert the string data into a pandas DataFrame
-csv_path = 'aug22_data\\slippage_rtoken_check.csv'
+csv_path = '../aug22_data/slippage_rtoken_check.csv'
 
 rtoken_slippage = pd.read_csv(csv_path)
 rtoken_slippage = rtoken_slippage.round(2)
