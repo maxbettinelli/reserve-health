@@ -15,8 +15,8 @@ st.markdown("---")
 st.sidebar.markdown("# Lending Market Metrics")
 st.sidebar.markdown("---")
 
-morpho_monday = 'C:\\Users\\betti\\reserve-projects\\health_metrics_v1\\aug22_data\\morpho_8.18.png'
-morpho_thursday = 'C:\\Users\\betti\\reserve-projects\\health_metrics_v1\\aug22_data\\morpho_8.22.png'
+morpho_monday = 'aug22_data\\morpho_8.18.png'
+morpho_thursday = 'aug22_data\\morpho_8.22.png'
 
 st.image(morpho_monday, caption='Morpho Markets: Aug 16th', use_column_width=True)
 st.image(morpho_thursday, caption='Morpho Markets: Aug 22nd', use_column_width=True)
