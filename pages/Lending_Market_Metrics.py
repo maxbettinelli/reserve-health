@@ -416,10 +416,9 @@ st.sidebar.markdown("---")
 morpho_monday = 'morpho_8.18.png'
 morpho_thursday = 'morpho_8.22.png'
 
-st.image(morpho_monday, caption='Morpho Markets: Aug 16th', use_column_width=True)
-st.image(morpho_thursday, caption='Morpho Markets: Aug 22nd', use_column_width=True)
-import streamlit as st
-import pandas as pd
+st.image(morpho_monday, caption='Morpho Market Size: Aug 16th', use_column_width=True)
+st.image(morpho_thursday, caption='Morpho Market Size: Aug 22nd', use_column_width=True)
+
 import altair as alt
 
 # Data restructuring
@@ -472,9 +471,11 @@ chart_base = alt.Chart(df_base).mark_bar().encode(
 col1, col2 = st.columns(2)
 
 with col1:
+    st.subheader('Mainnet Morpho Users')
     st.altair_chart(chart_eth, use_container_width=True)
 
 with col2:
+    st.subheader('Base Morpho Users')
     st.altair_chart(chart_base, use_container_width=True)
 
 
