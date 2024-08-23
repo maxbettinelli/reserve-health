@@ -418,13 +418,73 @@ morpho_thursday = 'morpho_8.22.png'
 
 st.image(morpho_monday, caption='Morpho Markets: Aug 16th', use_column_width=True)
 st.image(morpho_thursday, caption='Morpho Markets: Aug 22nd', use_column_width=True)
-# Sidebar: Download market data as CSV
-st.download_button(
-    label="Download Morpho Size Data CSV",
-    data=df_market.to_csv(index=False),
-    file_name='morpho_market_data.csv',
-    mime='text/csv'
-)
+import streamlit as st
+import pandas as pd
+import altair as alt
+
+# Data restructuring
+data = {
+    "Collateral": [
+        "Gauntlet eUSD Core (ETH)", "wstETH/eUSD", "WBTC/eUSD", "ETH+/eUSD", "ETH+/WETH",
+        "Gauntlet eUSD Core (Base)", "cbETH/eUSD (Base)", "hyUSD/eUSD (Base)", "bsdETH/eUSD (Base)", "wstETH/eUSD (Base)"
+    ],
+    "Unique Suppliers or Borrowers": [29, 6, 6, 2, 2, 101, 15, 10, 11, 10],
+    "Network": ["ETH", "ETH", "ETH", "ETH", "ETH", "Base", "Base", "Base", "Base", "Base"]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Split the DataFrame into Mainnet (ETH) and Base
+df_eth = df[df['Network'] == 'ETH']
+df_base = df[df['Network'] == 'Base']
+
+# Conditional color encoding: blue for Gauntlet, red for others
+df_eth['Color'] = df_eth['Collateral'].apply(lambda x: 'blue' if 'Gauntlet' in x else 'red')
+df_base['Color'] = df_base['Collateral'].apply(lambda x: 'blue' if 'Gauntlet' in x else 'red')
+
+# Define a common y-axis limit
+y_axis_limit = 105
+
+# Create the chart for Mainnet (ETH)
+chart_eth = alt.Chart(df_eth).mark_bar().encode(
+    x=alt.X('Collateral:N', sort=df_eth['Collateral'].tolist(), axis=alt.Axis(labelAngle=-45), title='Mainnet (ETH)'),
+    y=alt.Y('Unique Suppliers or Borrowers:Q', title='Open Supply or Borrow Positions', scale=alt.Scale(domain=[0, y_axis_limit])),
+    color=alt.Color('Color:N', scale=None, legend=None),  # Use the color specified in the DataFrame
+    tooltip=['Collateral', 'Network', 'Unique Suppliers or Borrowers']
+).properties(
+    width=300,
+    height=600
+).interactive()
+
+# Create the chart for Base
+chart_base = alt.Chart(df_base).mark_bar().encode(
+    x=alt.X('Collateral:N', sort=df_base['Collateral'].tolist(), axis=alt.Axis(labelAngle=-45), title='Base'),
+    y=alt.Y('Unique Suppliers or Borrowers:Q', title='Open Supply or Borrow Positions', scale=alt.Scale(domain=[0, y_axis_limit])),
+    color=alt.Color('Color:N', scale=None, legend=None),  # Use the color specified in the DataFrame
+    tooltip=['Collateral', 'Network', 'Unique Suppliers or Borrowers']
+).properties(
+    width=300,
+    height=600
+).interactive()
+
+# Display the charts side by side in Streamlit
+col1, col2 = st.columns(2)
+
+with col1:
+    st.altair_chart(chart_eth, use_container_width=True)
+
+with col2:
+    st.altair_chart(chart_base, use_container_width=True)
+
+
+# # Sidebar: Download market data as CSV
+# st.download_button(
+#     label="Download Morpho Size Data CSV",
+#     data=df_market.to_csv(index=False),
+#     file_name='morpho_market_data.csv',
+#     mime='text/csv'
+# )
 
 # Morpho Liquidations Section
 st.subheader("Morpho Liquidations Data")

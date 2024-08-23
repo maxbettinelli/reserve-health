@@ -56,6 +56,3 @@ with col3:
     st.markdown(blue_button_link("Curve", "https://curve.fi/#/ethereum/pools"), unsafe_allow_html=True)
     st.markdown(blue_button_link("Uniswap", "https://app.uniswap.org/pool"), unsafe_allow_html=True)
     st.markdown(blue_button_link("Aerodrome", "https://aerodrome.finance/liquidity"), unsafe_allow_html=True)
-    
-
-    
