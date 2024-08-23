@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Convert the string data into a pandas DataFrame
-csv_path = 'data_processing\\aug22_data\\eusd_pricepeg.csv'
+csv_path = 'https://raw.githubusercontent.com/maxbettinelli/reserve-health/master/aug22_data/eusd_pricepeg.csv'
 eusd_pricepeg_df = pd.read_csv(csv_path)
 
 # # Convert the 'hour' column to datetime
@@ -47,7 +47,7 @@ st.sidebar.markdown("# eUSD Price Peg")
 st.sidebar.markdown("---")
 
 # Path to your CSV file
-csv_path = 'data_processing\\aug22_data\\eusd_pricepeg.csv'
+csv_path = 'https://raw.githubusercontent.com/maxbettinelli/reserve-health/master/aug22_data/eusd_pricepeg.csv'
 
 # Load the CSV file into a DataFrame
 eusd_price_peg_aum_query_result = pd.read_csv(csv_path)
