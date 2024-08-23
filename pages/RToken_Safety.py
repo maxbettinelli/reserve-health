@@ -6,7 +6,7 @@ import streamlit as st
 # Get the absolute path to the project root
 
 # Construct the full path to the CSV file
-csv_path = 'data_processing\\aug22_data\\slippage_rtoken_check.csv'
+csv_path = 'slippage_rtoken_check.csv'
 
 # Read the CSV file
 rtoken_slippage = pd.read_csv(csv_path)
@@ -107,9 +107,9 @@ st.sidebar.markdown("# RToken Safety")
 st.sidebar.markdown("---")
 
 
-image_path_1 = 'data_processing\\aug22_data\\rs_collateral_check_8.22.png'
-image_path_2 = 'data_processing\\aug22_data\\rs_currentbasket_8.22.png'
-image_path_3 = 'data_processing\\aug22_data\\rs_stader_10percent.png'
+image_path_1 = 'rs_collateral_check_8.22.png'
+image_path_2 = 'rs_currentbasket_8.22.png'
+image_path_3 = 'rs_stader_10percent.png'
 
 
 

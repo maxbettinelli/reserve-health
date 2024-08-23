@@ -312,7 +312,7 @@ import streamlit as st
 # Get the absolute path to the project root
 
 # Construct the full path to the CSV file
-csv_path = 'data_processing\\aug22_data\\slippage_rtoken_check.csv'
+csv_path = 'slippage_rtoken_check.csv'
 
 # Read the CSV file
 rtoken_slippage = pd.read_csv(csv_path)
@@ -413,8 +413,8 @@ st.markdown("---")
 st.sidebar.markdown("# Lending Market Metrics")
 st.sidebar.markdown("---")
 
-morpho_monday = 'data_processing\\aug22_data\\morpho_8.18.png'
-morpho_thursday = 'data_processing\\aug22_data\\morpho_8.22.png'
+morpho_monday = 'morpho_8.18.png'
+morpho_thursday = 'morpho_8.22.png'
 
 st.image(morpho_monday, caption='Morpho Markets: Aug 16th', use_column_width=True)
 st.image(morpho_thursday, caption='Morpho Markets: Aug 22nd', use_column_width=True)

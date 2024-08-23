@@ -7,7 +7,7 @@ import streamlit as st
 # Get the absolute path to the project root
 
 # Construct the full path to the CSV file
-csv_path = 'data_processing\\aug22_data\\slippage_rtoken_check.csv'
+csv_path = 'slippage_rtoken_check.csv'
 
 # Read the CSV file
 rtoken_slippage = pd.read_csv(csv_path)
