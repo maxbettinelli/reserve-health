@@ -3,8 +3,12 @@ import pandas as pd
 import streamlit as st
 
 # Convert the string data into a pandas DataFrame
-csv_path = '..\\aug22_data\\slippage_rtoken_check.csv'
+# Get the absolute path to the project root
 
+# Construct the full path to the CSV file
+csv_path = 'data_processing\\aug22_data\\slippage_rtoken_check.csv'
+
+# Read the CSV file
 rtoken_slippage = pd.read_csv(csv_path)
 rtoken_slippage = rtoken_slippage.round(2)
 rtoken_slippage = rtoken_slippage.rename(columns={"Difference": "Difference %"})
