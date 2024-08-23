@@ -103,7 +103,7 @@ st.sidebar.markdown("---")
 
 # Display the styled DataFrame in Streamlit
 # Path to the image file
-image_path = 'data_processing\\aug22_data\\rtoken_liquidity_aug22.png'
+image_path = 'rtoken_liquidity_aug22.png'
 
 # Display the image in Streamlit
 st.subheader("DEX Liquidity per RToken")
