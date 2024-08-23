@@ -5,6 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 from data_processing.morpho_setup.gql_queries import fetch_liquidation_data, fetch_market_data
 from data_processing.morpho_setup.data_transformations import process_liquidation_data, process_market_data
 from data_processing.morpho_setup.liquidation_info import plot_liquidations, df_liquidations, df_market
@@ -15,8 +16,8 @@ st.markdown("---")
 st.sidebar.markdown("# Lending Market Metrics")
 st.sidebar.markdown("---")
 
-morpho_monday = '../aug22_data/morpho_8.18.png'
-morpho_thursday = '../aug22_data/morpho_8.22.png'
+morpho_monday = '..\\aug22_data\\morpho_8.18.png'
+morpho_thursday = '..\\aug22_data\\morpho_8.22.png'
 
 st.image(morpho_monday, caption='Morpho Markets: Aug 16th', use_column_width=True)
 st.image(morpho_thursday, caption='Morpho Markets: Aug 22nd', use_column_width=True)
